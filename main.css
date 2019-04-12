@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+
+
+}
+
+
+
+.container {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  background-color: FloralWhite ;
+  padding : 2em 3em 2em 3em;
+
+}
+
+small {
+  color: blue;
+}
+
+p {
+  text-align: justify;
+  word-spacing: 1px;
+  line-height: 1.3em;
+}
+
+button {
+  float: top;
+  float: right;
+}

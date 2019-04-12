@@ -1,10 +1,22 @@
+let bibleName = 'John';
+let verseNumber = 1;
+let languageBtn = 'kjv';
+
+// English to Korean language change
+$(() => {
+
+
 
   jQuery.ajax({
       url:'http://getbible.net/json',
       dataType: 'jsonp',
-      data: 'p=John1&v=kjv',
+      data: 'p='+bibleName+verseNumber+'&v='+languageBtn+'',
       jsonp: 'getbible',
       success:function(json){
+          $('#korean').on("click", function(){
+            languageBtn = 'korean'
+            location.reload();
+          });
           // set text direction
           if (json.direction == 'RTL'){
           	var direction = 'rtl';
@@ -14,18 +26,19 @@
           // check response type
           if (json.type == 'verse'){
               var output = '';
-              	jQuery.each(json.book, function(index, value) {
-                  	output += value.book_name+' '+value.chapter_nr+'<p class="'+direction+'">';
+              	jQuery.each(json.book, (index, value) => {
+                  	output += '<center><b>'+value.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
                       jQuery.each(value.chapter, (index, value) => {
                           output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
                           output += value.verse;
                           output += '<br/>';
                       });
                       output += '</p>';
+
               	});
               jQuery('#scripture').html(output);
           } else if (json.type == 'chapter'){
-              var output = json.book_name+' '+json.chapter_nr+'<p class="'+direction+'">';
+              var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p class="'+direction+'">';
               jQuery.each(json.chapter, (index, value) => {
                   output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
                   output += value.verse;
@@ -35,9 +48,9 @@
               jQuery('#scripture').html(output);
           } else if (json.type == 'book'){
               var output = '';
-              jQuery.each(json.book, function(index, value) {
+              jQuery.each(json.book, (index, value) => {
                   output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
-                  jQuery.each(value.chapter, function(index, value) {
+                  jQuery.each(value.chapter, (index, value) => {
                       output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
                       output += value.verse;
                       output += '<br/>';
@@ -49,7 +62,8 @@
           }
         }
       },
-      error:function(){
+      error: () => {
           jQuery('#scripture').html('<h2>No scripture was returned, please try again!</h2>');
        },
   });
+});
