@@ -1,19 +1,54 @@
 body {
   text-align: center;
   font-family: 'PT Sans', sans-serif;
-
+  justify-content: center;
 
 }
 
+button {
+  padding: 0 2em 0 2em;
+  border-radius: 20%;
 
+}
 
-.container {
+.mapContainer {
   display: inline-block;
-  width: 80%;
-  text-align: center;
-  background-color: FloralWhite ;
-  padding : 2em 3em 2em 3em;
+  position: absolute;
+  left: 5%;
+  width: 50%;
+  height: 100%;
+  background-image: url('images/ps_map.jpg');
+  background-size: cover;
+  border-radius: 5%;
+}
 
+.timeLine {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: 24%;
+  width: 40%;
+  height: 80%;
+  border-radius: 5%;
+  text-align: left;
+  column-count: 2;
+  padding-top: 5%;
+  background-color: lightblue;
+}
+
+
+.textArea {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  background-color: orange;
+  border-radius: 10%;
+  width: 40%;
+  height: 20%;
+}
+
+#fish {
+  display: inline;
 }
 
 small {
@@ -30,3 +65,12 @@ button {
   float: top;
   float: right;
 }
+/*
+.container {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  background-color: FloralWhite ;
+  padding : 2em 3em 2em 3em;
+
+} */
