@@ -1,21 +1,19 @@
-let bibleName = 'John';
-let verseNumber = 1;
-let languageBtn = 'kjv';
-const cityArr= ['1. Jerusalem', '2. Nazareth', '3. Bethlehem', '4. Jerusalem', '5. Egypt', '6. Nazareth', '7. Jerusalem', '8. The Jordan River', '9. The Wilderness', '10. Cana of Galilee', '11. Jerusalem', '12. Samaria', '13.  Galilee', '14. Nazareth', '15. The Sea of Galilee', '16. All Galilee', '17. Capernaum', '18. Jerusalem', '19. Nain', '20. Capernaum', '21. Sea of Galilee', '22. Nazareth', '23. Sea of Galilee', '24. Tyre and Sidon', '25. Bethsaida', '26. Caesarea Philippi', '27. Capernaum', '28. Jerusalem', '29. Bethany', '30. Jerusalem', '31. Beyond the Jordan', '32. Bethany', '33. Ephraim', '34. Judea', '35. Jericho', '36. Bethany'];
+
 
 $(() => {
   $('#startButton').on('click', (event) => {
-    $('.container').empty(); // reset
-    for (let i = 0; i < cityArr.length; i++) {  //generate div tag
+    $('.timeLine').empty(); // reset
+    for (let i = 0; i < cityArr.length; i++) {
     const $div = $('<div>').attr('class', i).text(cityArr[i]);
     $('.timeLine').append($div);
     }
 });
 //getting class name when click the list of text
 $('div').on('click', (event) => {
-    const $target = event.target.className;
-      console.log($target);
-
+    $('.textArea').empty();
+    const $target = event.target.className ;
+    const $div = $('<div>').html(detailArr[$target]);
+    $('.textArea').append($div);
 });
 
 });
@@ -24,7 +22,9 @@ $('div').on('click', (event) => {
 
 
 
-
+// let bibleName = 'John';
+// let verseNumber = 1;
+// let languageBtn = 'kjv';
 // jQuery.ajax({
 //     url:'http://getbible.net/json',
 //     dataType: 'jsonp',
