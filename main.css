@@ -98,10 +98,9 @@ h1 {
   .mapContainer {
     display: block;
     position: absolute;
-    top: 35%;
+    top: 40%;
     width: 100%;
     height: auto;
-    overflow: hidden;
     justify-content: center;
   }
 
@@ -121,7 +120,6 @@ h1 {
     padding: 2%;
     margin: 0 auto;
     text-align: center;
-
 
   }
   .timeLine {
@@ -151,7 +149,7 @@ h1 {
 
   .textArea div {
     margin: 3%;
-    font-size: .9em;
+    
   }
   #startButton {
     background-color: skyblue;
