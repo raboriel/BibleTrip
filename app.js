@@ -7,6 +7,7 @@ $(() => {
     const $div = $('<div>').attr('class', i).text(cityArr[i]);
     $('.timeLine').append($div);
     }
+    event.stopPropagation();
 });
 //getting class name when click the list of text
 $('div').on('click', (event) => {
@@ -14,6 +15,8 @@ $('div').on('click', (event) => {
     const $target = event.target.className ;
     const $div = $('<div>').html(detailArr[$target]);
     $('.textArea').append($div);
+    $('#fish').animate(jerusalem);
+    event.stopPropagation();
 });
 
 });
