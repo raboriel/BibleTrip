@@ -11,19 +11,23 @@ $(() => {
 });
 //getting class name when click the list of text
 $('div').on('click', (event) => {
-    $('.textArea').empty();
     const $target = event.target.className ;
+    $('.textArea').empty();
     const $div = $('<div>').html(detailArr[$target]);
     $('.textArea').append($div);
-    $('#fish').animate(jerusalem);
+    moveFish();
     event.stopPropagation();
 });
 
 });
 
-
-
-
+const moveFish = () => {
+$('#fish').animate(jerusalem);
+$('#fish').animate(bethany);
+$('#fish').animate(bethsaida);
+$('#fish').animate(caesarea);
+$('#fish').animate(tyre);
+}
 
 // let bibleName = 'John';
 // let verseNumber = 1;
