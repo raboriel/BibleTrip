@@ -3,9 +3,10 @@
 $(() => {
   $('#startButton').on('click', (event) => {
     $('.timeLine').empty();
+    $('.timeLine').append().html("<h4>Jesus Christ Timeline</h4>");
     // generate timeline
     for (let i = 0; i < cityArr.length; i++) {
-    const $div = $('<div>').attr('class', i).text(cityArr[i]);
+    const $div = $('<div>').attr('class', i).html(cityArr[i]);
     $('.timeLine').append($div);
     }
     event.stopPropagation();
@@ -45,17 +46,12 @@ $('div').on('click', (event) => {
 });
 });
 
-
-
-
-
-// let bibleName = 'John';
-// let verseNumber = 1;
-// let languageBtn = 'kjv';
+// const jsonData = "scrip=Acts%203:17-4;2:1"
+//
 // jQuery.ajax({
 //     url:'http://getbible.net/json',
 //     dataType: 'jsonp',
-//     data: 'p='+bibleName+verseNumber+'&v='+languageBtn+'',
+//     data: jsonData ,
 //     jsonp: 'getbible',
 //     success:function(json){
 //         // set text direction

@@ -7,7 +7,6 @@ body {
   background-image: url("images/tripbackground.jpg");
   background-position: center;
   background-size: cover;
-
 }
 
 #startButton {
@@ -51,6 +50,10 @@ body {
   margin-left: 1%;
 }
 
+h4 {
+  margin: -.2em 0 0 1.5em;
+}
+
 .timeLine {
   display: inline-block;
   right: 5%;
@@ -68,6 +71,7 @@ body {
   margin: 4% 10% 4% 10%;
   -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  cursor: pointer;
 
 }
 
@@ -88,12 +92,19 @@ body {
   font-size: .9em;
   -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  cursor: pointer;
 }
 
 #fish {
   position: absolute;
   -webkit-animation: jello-horizontal 0.9s both;
 	        animation: jello-horizontal 0.9s both;
+}
+
+.container {
+  background-color: white;
+  text-align: justify;
+  padding: 4%;
 }
 
 @media screen and (max-width: 700px) {
@@ -136,7 +147,7 @@ body {
 
   .timeLine div {
     margin: 4%;
-    font-size: 1.2em
+    font-size: 1.2em;
     -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
