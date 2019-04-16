@@ -34,7 +34,7 @@ let idx = 0;
 
 const callAjax = () => {
   jQuery.ajax({
-      url:'http://getbible.net/json',
+      url:'https://getbible.net/json',
       dataType: 'jsonp',
       data: 'scrip='+verseArr[idx],
       jsonp: 'getbible',
