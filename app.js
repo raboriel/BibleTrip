@@ -45,13 +45,14 @@ $('div').on('click', '.timeLine', (event) => {
     event.stopPropagation();
 });
 
-// on click call AJAX function 
+
+// on click call AJAX function
 $('.textArea').on('click', (event) => {
   const $target = event.target.className ;
   for (let i = 0; i < verseArr.length; i++) {
     if ($target == 'text'+i) {
     idx = i;
-    callAjax();
+    callAjax(idx);
   }
 }
 
