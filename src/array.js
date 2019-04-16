@@ -68,8 +68,9 @@ const callAjax = (idx) => {
                   output += value.verse;
                   output += '<br/>';
               });
-              output += '</p>';
-              jQuery('#scripture').html(output);
+              const $div = $('<div>').html(output);
+              $('.textArea').empty();
+              $('.textArea').append($div);
           } else if (json.type == 'book'){
               var output = '';
               jQuery.each(json.book, (index, value) => {
@@ -82,12 +83,12 @@ const callAjax = (idx) => {
               output += '</p>';
           });
           if(addTo){
-          	jQuery('#scripture').html(output);
+          	$('.textArea').html(output);
           }
         }
       },
       error: () => {
-          jQuery('#scripture').html('<h2>No scripture was returned, please try again!</h2>');
+          $('.textArea').html('<h2>No scripture was returned, please try again!</h2>');
        },
   });
 
