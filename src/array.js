@@ -58,7 +58,9 @@ const callAjax = () => {
                       output += '</p>';
 
               	});
-              alert(output)
+              const $div = $('<div>').html(output);
+              $('.textArea').empty();
+              $('.textArea').append($div);
               // jQuery('#scripture').html(output);
           } else if (json.type == 'chapter'){
               var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p class="'+direction+'">';
