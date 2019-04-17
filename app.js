@@ -1,5 +1,3 @@
-
-
 $(() => {
   $('#startButton').on('click', (event) => {
     $('.timeLine').empty();
@@ -51,10 +49,74 @@ $('.textArea').on('click', (event) => {
   const $target = event.target.className ;
   for (let i = 0; i < verseArr.length; i++) {
     if ($target == 'text'+i) {
-    idx = i;
+    let idx = i;
+    //call bible api
     callAjax(idx);
   }
 }
+});
+});
 
-});
-});
+//bible api ajax function
+const callAjax = (idx) => {
+  jQuery.ajax({
+      url:'https://getbible.net/json',
+      dataType: 'jsonp',
+      data: 'scrip='+verseArr[idx],
+      jsonp: 'getbible',
+      success:function(json){
+          // set text direction
+          if (json.direction == 'RTL'){
+          	var direction = 'rtl';
+          } else {
+          	var direction = 'ltr';
+          }
+          // check response type
+          if (json.type == 'verse'){
+              var output = '';
+              	jQuery.each(json.book, (index, value) => {
+                  	output += '<center><b>'+value.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
+                      jQuery.each(value.chapter, (index, value) => {
+                          output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
+                          output += value.verse;
+                          output += '<br/>';
+                      });
+                      output += '</p>';
+
+              	});
+              const $div = $('<div>').html(output);
+              $('.textArea').empty();
+              $('.textArea').append($div);
+              // jQuery('#scripture').html(output);
+          } else if (json.type == 'chapter'){
+              var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p class="'+direction+'">';
+              jQuery.each(json.chapter, (index, value) => {
+                  output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
+                  output += value.verse;
+                  output += '<br/>';
+              });
+              const $div = $('<div>').html(output);
+              $('.textArea').empty();
+              $('.textArea').append($div);
+          } else if (json.type == 'book'){
+              var output = '';
+              jQuery.each(json.book, (index, value) => {
+                  output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
+                  jQuery.each(value.chapter, (index, value) => {
+                      output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
+                      output += value.verse;
+                      output += '<br/>';
+                  });
+              output += '</p>';
+          });
+          if(addTo){
+          	$('.textArea').html(output);
+          }
+        }
+      },
+      error: () => {
+          $('.textArea').html('<h2>No scripture was returned, please try again!</h2>');
+       },
+  });
+
+}

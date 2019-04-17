@@ -14,7 +14,7 @@ body {
   color: white;
   padding: .2em 2em .2em;
   font-size: 1.1em;
-  border-radius: 10%;
+  border-radius: 10px;
   display: flex;
   opacity: 0.8;
   transition: 0.3s;
@@ -33,7 +33,7 @@ body {
   width: auto;
   height: 780px;
   overflow: hidden;
-  border-radius: 2%;
+  border-radius: 10px;
 }
 
 .rightContainer {
@@ -60,7 +60,7 @@ h4 {
   top: 35%;
   width: 100%;
   height: 80%;
-  border-radius: 2%;
+  border-radius: 10px;
   text-align: left;
   padding-top: 5%;
   background-color: Linen;
@@ -78,7 +78,7 @@ h4 {
 .textArea {
   display: flex;
   background-color: white;
-  border-radius: 3%;
+  border-radius: 10px;
   width: 100%;
   height: 20%;
   justify-content: center;
@@ -128,7 +128,7 @@ h4 {
     position: fixed;
     width: 100%;
     height: 250px;
-    border-radius: 2%;
+    border-radius: 10px;
     background-color: DarkSeaGreen ;
     padding: 2%;
     margin: 0 auto;
@@ -139,7 +139,7 @@ h4 {
     display: inline-block;
     width: 94%;
     height: 30%;
-    border-radius: 2%;
+    border-radius: 10px;
     padding-top: 1%;
     background-color: AntiqueWhite;
     overflow-y:scroll;
@@ -155,7 +155,7 @@ h4 {
   .textArea {
     display: inline-block;
     background-color: white ;
-    border-radius: 3%;
+    border-radius: 10px;
     width: 94%;
     height: 40%;
     margin: 2%;
@@ -174,7 +174,7 @@ h4 {
     color: white;
     padding: .2em 3em .2em;
     font-size: 1.1em;
-    border-radius: 3%;
+    border-radius: 10px;
     display: inline-block;
   }
 }
