@@ -9,7 +9,7 @@ body {
   background-size: cover;
 }
 
-#startButton, #Back ,#Play {
+#startButton, #Back ,#Next {
   display: inline-block;
   background-color: #e27e36;
   color: white;
@@ -20,7 +20,7 @@ body {
   position: relative;
 
 }
-#startButton:hover,#Play:hover,#Back:hover  {background-color: #dc5c06;}
+#startButton:hover,#Next:hover,#Back:hover  {background-color: #dc5c06;}
 
 #map {
   width: auto;
@@ -54,6 +54,11 @@ h4 {
   margin: 0 .2em .2em 0;
   color: #e27e36;
 }
+h5 {
+  font-size: .9em;
+  color: #e27e36;
+  margin-top: 25%;
+  }
 
 .timeLine {
   display: inline-block;
@@ -100,46 +105,6 @@ h4 {
   position: absolute;
 }
 
-.tooltip {
-  position: absolute;
-  display: flex;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 40%;
-}
-
-.tooltip .tooltiptext {
-  visibility:hidden;
-  transition: visibility 1s;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: 25%;
-  right: 90%;
-  opacity: .7;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent black;
-}
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: .7;
-  transition: visibility .1s linear .1s, opacity 2s;
-}
 
 
 @media screen and (max-width: 700px) {

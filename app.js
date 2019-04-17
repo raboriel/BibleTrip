@@ -1,4 +1,4 @@
-//gloval val for Play button
+//gloval val for next and previous button
 let actionCount = 0;
 
 $(() => {
@@ -8,10 +8,9 @@ $(() => {
     actionCount = 0
     startBtn(event);
   });
-  // Play button
-  $('#Play').on('click', (event) => {
+  // next button
+  $('#Next').on('click', (event) => {
     startBtn(event);
-    const $target = $(".0").attr('class');
     const target = actionCount;
     moveFish(target);
     actionCount++;
@@ -21,12 +20,15 @@ $(() => {
   });
   // back button
   $('#Back').on('click', (event) => {
-    startBtn(event);
-    const target = actionCount-2;
+    // prevent error when click this button on start
+    let target = actionCount;
+    if (target > 2) {
+      target -= 2;
+    } else target = 0;
     moveFish(target);
     actionCount--;
     if (actionCount <= 2) {
-      actionCount = 2;
+      actionCount = 1;
     }
   });
   // for clik, timeline list
@@ -64,7 +66,7 @@ const startBtn = (event) => {
   // moving the fish
 const moveFish = (target) => {
   $('.textArea').empty();
-  const $div = $('<div>').attr('class', "text"+target).html('<h4>- Chapter '+(parseInt(target)+1)+' -</h4>'+detailArr[target]);
+  const $div = $('<div>').attr('class', "text"+target).html('<h4>- Chapter '+(parseInt(target)+1)+' -</h4>'+detailArr[target]+'<h5>Click for relevant verses</h5>');
   $('.textArea').append($div);
   if (target == 0 || target == 3 || target == 6 || target == 10 || target == 17 || target == 27 || target == 29 || target == 36 || target == 37 || target == 38 || target == 39 ||
     target == 40 || target == 41 || target == 42 || target == 43 || target == 44 || target == 45) {
