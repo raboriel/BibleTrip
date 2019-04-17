@@ -39,10 +39,9 @@ $(() => {
 
 const startBtn = (event) => {
   $('.timeLine').empty();
-  $('.timeLine').append().html("<h4>Jesus Christ Timeline</h4>");
   // generate timeline
   for (let i = 0; i < cityArr.length; i++) {
-  const $div = $('<div>').attr('class', i).html(cityArr[i]);
+  const $div = $('<button>').attr('class', i).html(cityArr[i]);
   $('.timeLine').append($div);
   }
   event.stopPropagation();
@@ -52,7 +51,7 @@ const startBtn = (event) => {
   // moving the fish
 const moveFish = (target) => {
   $('.textArea').empty();
-  const $div = $('<div>').attr('class', "text"+target).html('<h4>- '+(parseInt(target)+1)+' -</h4>'+detailArr[target]);
+  const $div = $('<div>').attr('class', "text"+target).html('<h4>- Chapter '+(parseInt(target)+1)+' -</h4>'+detailArr[target]);
   $('.textArea').append($div);
   if (target == 0 || target == 3 || target == 6 || target == 10 || target == 17 || target == 27 || target == 29 || target == 36 || target == 37 || target == 38 || target == 39 ||
     target == 40 || target == 41 || target == 42 || target == 43 || target == 44 || target == 45) {

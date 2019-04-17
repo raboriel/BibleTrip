@@ -20,7 +20,7 @@ body {
   position: relative;
 
 }
-#startButton:hover,#Next:hover,#Previous:hover  {background-color: #dc5c06;}
+#startButton:hover,#Play:hover  {background-color: #dc5c06;}
 
 #map {
   width: auto;
@@ -43,15 +43,15 @@ body {
   background-size: cover;
   position: relative;
   width: 30%;
-  height: 660px;
+  height: 672px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 14px;
   margin-left: 1%;
   text-align: center;
 }
 
 h4 {
-  margin: -.2em 0 0 1.5em;
+  margin: 0 .2em .2em 0;
 }
 
 .timeLine {
@@ -59,30 +59,30 @@ h4 {
   right: 5%;
   top: 35%;
   width: 100%;
-  height: 59%;
+  height: 60%;
   margin-top: 4%;
   border-radius: 10px;
-  text-align: left;
-  padding-top: 5%;
+  text-align: center;
   background-color: Linen;
   overflow-y:scroll;
 }
 
-.timeLine div {
-  margin: 1.5% 10% 1.5% 10%;
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.timeLine button {
+  background-color: transparent;
+  font-size: .9em;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 8%;
   cursor: pointer;
-
 }
+.timeLine button:hover {background-color: #ea9354; color:white;}
 
 .textArea {
   display: inline-block;
   background-color: white;
   border-radius: 10px;
   width: 100%;
-  height: 30%;
-  justify-content: center;
+  height: 32%;
   overflow-y: auto;
   opacity: 0.9;
   margin-top: 4%;
@@ -177,7 +177,6 @@ h4 {
   }
 
   h4 {
-    margin: -.2em 0 0 1.5em;
     text-align: center;
   }
   .timeLine div {
