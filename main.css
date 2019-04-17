@@ -9,17 +9,18 @@ body {
   background-size: cover;
 }
 
-#startButton {
-  background-color: Chocolate ;
+#startButton, #Play {
+  display: inline-block;
+  background-color: #e27e36;
   color: white;
-  padding: .2em 2em .2em;
-  font-size: 1.1em;
-  border-radius: 10px;
-  display: flex;
-  opacity: 0.8;
-  transition: 0.3s;
+  padding: .2em 1em .2em;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: 0.5s;
+  position: relative;
+
 }
-#startButton:hover {opacity: 1};
+#startButton:hover,#Next:hover,#Previous:hover  {background-color: #dc5c06;}
 
 #map {
   width: auto;
@@ -31,23 +32,22 @@ body {
   display: flex;
   position: relative;
   width: auto;
-  height: 780px;
+  height: 700px;
   overflow: hidden;
   border-radius: 10px;
 }
 
 .rightContainer {
-  display: flex;
+  display: inline-block;
   background-image: url("images/rbackground.jpg");
   background-size: cover;
   position: relative;
-  width: 25%;
-  height: 740px;
-  border-radius: 2%;
+  width: 30%;
+  height: 660px;
+  border-radius: 10px;
   padding: 20px;
-  flex-direction: column;
-  align-items: center;
   margin-left: 1%;
+  text-align: center;
 }
 
 h4 {
@@ -59,7 +59,8 @@ h4 {
   right: 5%;
   top: 35%;
   width: 100%;
-  height: 80%;
+  height: 59%;
+  margin-top: 4%;
   border-radius: 10px;
   text-align: left;
   padding-top: 5%;
@@ -80,11 +81,11 @@ h4 {
   background-color: white;
   border-radius: 10px;
   width: 100%;
-  height: 20%;
+  height: 30%;
   justify-content: center;
-  margin: 3%;
   overflow-y: auto;
   opacity: 0.9;
+  margin-top: 4%;
 }
 
 .textArea div {
@@ -124,18 +125,19 @@ h4 {
     padding: 8px;
     position: fixed;
     width: 100%;
-    height: 250px;
+    height: 200px;
     margin: 0 auto;
     text-align: center;
 
   }
   .timeLine {
-    display: inline-block;
+    display: none;
     width: 100%;
-    height: 40%;
-    padding-top: 1%;
+    height: 15%;
     background-color: AntiqueWhite;
     overflow-y:scroll;
+    margin-top: 2%;
+    border-radius: 0;
   }
 
   h4 {
@@ -161,19 +163,19 @@ h4 {
   .textArea {
     display: inline-block;
     background-color: white ;
-    border-radius: 10px;
+    border-radius: 0;
+    margin-top: 2%;
     width: 100%;
-    height: 50%;
-    margin: 2%;
+    height: 75%;
     overflow-y: auto;
   }
 
 
-  #startButton {
+    #startButton, #Play {
     background-color: Chocolate;
     color: white;
-    padding: .1em 3em .1em;
-    font-size: 1.1em;
+    padding: .3em 2em .3em;
+    font-size: 1.2em;
     border-radius: 10px;
     display: inline-block;
   }

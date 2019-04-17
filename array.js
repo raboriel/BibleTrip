@@ -1,21 +1,21 @@
 //global variable for position of city
-const jerusalem = {top: '66%', left: '38%'};
-const bethlehem = {top: '70%', left: '40%'};
-const bethany = {top: '67%', left: '43%'};
-const jericho = {top: '62%', left: '50%'};
-const jordan = {top: '61%', left: '58%'};
-const samaria = {top: '42%', left: '38%'};
-const nain = {top: '30%', left: '42%'};
-const nazareth = {top: '26%', left: '40%'};
-const cana = {top: '21%', left: '40%'};
-const capernaum = {top: '17%', left: '52%'};
-const seaOfGalilee = {top: '20%', left: '56%'};
-const bethsaida = {top: '17%', left: '59%'};
-const tyre = {top: '2%', left: '33%'};
+const jerusalem = {top: '71%', left: '38%'};
+const bethlehem = {top: '75%', left: '40%'};
+const bethany = {top: '72%', left: '43%'};
+const jericho = {top: '67%', left: '50%'};
+const jordan = {top: '64%', left: '58%'};
+const samaria = {top: '45%', left: '38%'};
+const nain = {top: '32%', left: '42%'};
+const nazareth = {top: '28%', left: '40%'};
+const cana = {top: '22%', left: '40%'};
+const capernaum = {top: '18%', left: '52%'};
+const seaOfGalilee = {top: '21%', left: '56%'};
+const bethsaida = {top: '18%', left: '59%'};
+const tyre = {top: '1%', left: '33%'};
 const caesarea = {top: '9%', left: '63%'};
-const ephraim = {top: '57%', left: '50%'};
-const judea = {top: '64%', left: '32%'};
-const egypt = {top: '80%', left: '5%'};
+const ephraim = {top: '61%', left: '50%'};
+const judea = {top: '69%', left: '32%'};
+const egypt = {top: '87%', left: '5%'};
 
 
 //bible verse array
