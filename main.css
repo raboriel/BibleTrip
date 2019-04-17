@@ -70,7 +70,7 @@ h4 {
 .timeLine div {
   margin: 4% 10% 4% 10%;
   -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   cursor: pointer;
 
 }
@@ -89,16 +89,13 @@ h4 {
 
 .textArea div {
   margin: 5%;
-  font-size: .9em;
   -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   cursor: pointer;
 }
 
 #fish {
   position: absolute;
-  -webkit-animation: jello-horizontal 0.9s both;
-	        animation: jello-horizontal 0.9s both;
 }
 
 .container {
@@ -124,106 +121,60 @@ h4 {
     }
 
   .rightContainer {
-    display: block;
+    padding: 8px;
     position: fixed;
     width: 100%;
     height: 250px;
-    border-radius: 10px;
-    background-color: DarkSeaGreen ;
-    padding: 2%;
     margin: 0 auto;
     text-align: center;
 
   }
   .timeLine {
     display: inline-block;
-    width: 94%;
-    height: 30%;
-    border-radius: 10px;
+    width: 100%;
+    height: 40%;
     padding-top: 1%;
     background-color: AntiqueWhite;
     overflow-y:scroll;
   }
 
+  h4 {
+    margin: -.2em 0 0 1.5em;
+    text-align: center;
+  }
   .timeLine div {
+    text-align: center;
     margin: 4%;
     font-size: 1.2em;
     -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  .textArea div {
+    margin: 2%;
+    font-size: 1.1em;
+    -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  	animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    cursor: pointer;
   }
 
   .textArea {
     display: inline-block;
     background-color: white ;
     border-radius: 10px;
-    width: 94%;
-    height: 40%;
+    width: 100%;
+    height: 50%;
     margin: 2%;
     overflow-y: auto;
   }
 
-  .textArea div {
-    margin: 3%;
-    font-size: 1.3em
-    -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
 
   #startButton {
     background-color: Chocolate;
     color: white;
-    padding: .2em 3em .2em;
+    padding: .1em 3em .1em;
     font-size: 1.1em;
     border-radius: 10px;
     display: inline-block;
-  }
-}
-
-
-@keyframes jello-horizontal {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
-@-webkit-keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
   }
 }
