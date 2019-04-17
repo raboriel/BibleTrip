@@ -2,17 +2,13 @@ let actionCount = 0;
 
 $(() => {
   $('#startButton').on('click', (event) => {
-    $('.timeLine').empty();
-    $('.timeLine').append().html("<h4>Jesus Christ Timeline</h4>");
-    // generate timeline
-    for (let i = 0; i < cityArr.length; i++) {
-    const $div = $('<div>').attr('class', i).html(cityArr[i]);
-    $('.timeLine').append($div);
-    }
-    event.stopPropagation();
+    $('.textArea').empty();
+    actionCount = 0
+    startBtn(event);
   });
 
   $('#Play').on('click', (event) => {
+    startBtn(event);
     const $target = $(".0").attr('class');
     const target = parseInt($target)+actionCount;
     moveFish(target);
@@ -40,6 +36,18 @@ $(() => {
   }
   });
 });
+
+const startBtn = (event) => {
+  $('.timeLine').empty();
+  $('.timeLine').append().html("<h4>Jesus Christ Timeline</h4>");
+  // generate timeline
+  for (let i = 0; i < cityArr.length; i++) {
+  const $div = $('<div>').attr('class', i).html(cityArr[i]);
+  $('.timeLine').append($div);
+  }
+  event.stopPropagation();
+};
+
 
   // moving the fish
 const moveFish = (target) => {
