@@ -1,25 +1,38 @@
+//gloval val for Play button
 let actionCount = 0;
 
 $(() => {
+  // start button
   $('#startButton').on('click', (event) => {
     $('.textArea').empty();
     actionCount = 0
     startBtn(event);
   });
-
+  // Play button
   $('#Play').on('click', (event) => {
     startBtn(event);
     const $target = $(".0").attr('class');
-    const target = parseInt($target)+actionCount;
+    const target = actionCount;
     moveFish(target);
     actionCount++;
     if (actionCount >= detailArr.length) {
       actionCount = 0;
     }
   });
-
+  // back button
+  $('#Back').on('click', (event) => {
+    startBtn(event);
+    const target = actionCount-2;
+    moveFish(target);
+    actionCount--;
+    if (actionCount <= 2) {
+      actionCount = 2;
+    }
+  });
+  // for clik, timeline list
   $('div').on('click', '.timeLine', (event) => {
     const target = event.target.className ;
+    actionCount = parseInt(target)+1;
     moveFish(target);
   });
 

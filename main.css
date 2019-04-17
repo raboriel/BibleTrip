@@ -9,7 +9,7 @@ body {
   background-size: cover;
 }
 
-#startButton, #Play {
+#startButton, #Back ,#Play {
   display: inline-block;
   background-color: #e27e36;
   color: white;
@@ -20,7 +20,7 @@ body {
   position: relative;
 
 }
-#startButton:hover,#Play:hover  {background-color: #dc5c06;}
+#startButton:hover,#Play:hover,#Back:hover  {background-color: #dc5c06;}
 
 #map {
   width: auto;
