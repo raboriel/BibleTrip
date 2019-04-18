@@ -10,3 +10,7 @@ the Bible api came from https://getbible.net/.
 ## Tools
 
 javaScript, html, CSS
+
+## Live Project Link
+
+https://raboriel.github.io/BibleTrip/
