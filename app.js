@@ -1,4 +1,4 @@
-//gloval val for next and previous button
+//global val for next and previous button
 let actionCount = 0;
 
 $(() => {
