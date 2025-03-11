@@ -98,7 +98,7 @@ const moveFish = (target) => {
 //bible api ajax function
 const callAjax = (idx) => {
   jQuery.ajax({
-      url:'https://getbible.net/json',
+      url:'https://api.getbible.net/v2/kjv/62/3.json',
       dataType: 'jsonp',
       data: 'scrip='+verseArr[idx],
       jsonp: 'getbible',
