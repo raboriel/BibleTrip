@@ -41,14 +41,15 @@ $(() => {
 
   // on click call AJAX function
   $('.textArea').on('click', (event) => {
-    const target = event.target.className ;
+    const target = event.target.className;
+
     for (let i = 0; i < verseArr.length; i++) {
-      if (target == 'text'+i) {
-      let idx = i;
-      //call bible api
-      callAjax(idx);
+        if (target.includes('text' + i)) {
+            let verseQuery = verseArr[i];
+            callVerseAjax(verseQuery);
+            break;
+        }
     }
-  }
   });
 });
 
@@ -93,68 +94,39 @@ const moveFish = (target) => {
   else if (target == 34) {$('#fish').animate(jericho);}
 }
 
-
-
 //bible api ajax function
-const callAjax = (idx) => {
+const callVerseAjax = (query) => {
+  let apiUrl = `https://query.getbible.net/v2/kjv/${query.replace(/ /g, '%20')}`;
+  let proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
+
   jQuery.ajax({
-      url:'https://api.getbible.net/v2/kjv/62/3.json',
-      dataType: 'jsonp',
-      data: 'scrip='+verseArr[idx],
-      jsonp: 'getbible',
-      success:function(json){
-          // set text direction
-          if (json.direction == 'RTL'){
-          	var direction = 'rtl';
-          } else {
-          	var direction = 'ltr';
+      url: proxyUrl,
+      method: 'GET',
+      dataType: 'json',
+      success: function (json) {
+          console.log("API respons:", json);
+          if (!json || Object.keys(json).length === 0) {
+              $('.textArea').html('<h2>No verses was returned.</h2>');
+              return;
           }
-          // check response type
-          if (json.type == 'verse'){
-              var output = '';
-              	jQuery.each(json.book, (index, value) => {
-                  	output += '<center><b>'+value.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
-                      jQuery.each(value.chapter, (index, value) => {
-                          output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                          output += value.verse;
-                          output += '<br/>';
-                      });
-                      output += '</p>';
+          let key = Object.keys(json)[0];
+          let data = json[key];
+          let output = `<center><b>${data.book_name} ${data.chapter}</b></center><br/><p>`;
 
-              	});
-              const $div = $('<div>').html(output);
-              $('.textArea').empty();
-              $('.textArea').append($div);
-              // jQuery('#scripture').html(output);
-          } else if (json.type == 'chapter'){
-              var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p class="'+direction+'">';
-              jQuery.each(json.chapter, (index, value) => {
-                  output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                  output += value.verse;
-                  output += '<br/>';
+          if (data.verses && data.verses.length > 0) {
+              data.verses.forEach(verse => {
+                  output += `${verse.text}<br/>`;
               });
-              const $div = $('<div>').html(output);
-              $('.textArea').empty();
-              $('.textArea').append($div);
-          } else if (json.type == 'book'){
-              var output = '';
-              jQuery.each(json.book, (index, value) => {
-                  output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p class="'+direction+'">';
-                  jQuery.each(value.chapter, (index, value) => {
-                      output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                      output += value.verse;
-                      output += '<br/>';
-                  });
               output += '</p>';
-          });
-          if(addTo){
-          	$('.textArea').html(output);
+          } else {
+              output += '<h2>No verses was returned.</h2>';
           }
-        }
-      },
-      error: () => {
-          $('.textArea').html('<h2>No scripture was returned, please try again!</h2>');
-       },
-  });
 
-}
+          $('.textArea').empty().append($('<div>').html(output));
+      },
+      error: function () {
+          $('.textArea').html('<h2>No scripture was returned, please try again!</h2>');
+      }
+  });
+};
+
